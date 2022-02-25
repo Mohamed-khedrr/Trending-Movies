@@ -1,0 +1,62 @@
+<section class="home">
+  <div class="container">
+    <div class="row my-3">
+      <div
+        class="description col-md-4 d-flex justify-content-center flex-column position-relative"
+      >
+        <h2>
+          Trending <br />movies<br />
+          to watch now
+        </h2>
+        <p class="text-muted mt-3">most watched movies by days</p>
+      </div>
+      <div *ngFor="let movie of movies" class="col-md-2 my-4 text-center">
+        <div class="movie">
+          <a
+            class="text-decoration-none text-light"
+            [routerLink]="['/movieDetails', movie.id]"
+          >
+            <img [src]="imgPath + movie.poster_path" class="img-fluid" />
+            <h3 class="h6 my-2">{{ movie.title }}</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div
+        class="description col-md-4 d-flex justify-content-center flex-column position-relative"
+      >
+        <h2>
+          Trending <br />tv<br />
+          to watch now
+        </h2>
+        <p class="text-muted mt-3">most watched movies by days</p>
+      </div>
+      <div *ngFor="let tv of tvs" class="col-md-2 my-4 text-center">
+        <div class="movie">
+          <img [src]="imgPath + tv.poster_path" class="img-fluid" />
+          <h3 class="h6 my-2">{{ tv.name }}</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div
+        class="description col-md-4 d-flex justify-content-center flex-column position-relative"
+      >
+        <h2>
+          Trending <br />People<br />
+          to watch now
+        </h2>
+        <p class="text-muted mt-3">most popular by days</p>
+      </div>
+      <div *ngFor="let person of persons" class="col-md-2 my-4 text-center">
+        <div class="movie">
+          <img [src]="imgPath + person.profile_path" class="img-fluid" />
+          <h3 class="h6 my-2">{{ person.name }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

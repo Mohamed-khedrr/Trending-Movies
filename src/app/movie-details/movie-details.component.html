@@ -1,0 +1,46 @@
+<section class="movie-details">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="poster">
+          <img [src]="imagePath + movieDetails.poster_path" class="img-fluid" />
+        </div>
+      </div>
+      <div class="col-md-7 p-4">
+        <div class="content">
+          <h3 class="h2">{{ movieDetails.title }}</h3>
+          <div class="d-flex my-3">
+            <div
+              class="bg-success rounded-3 me-3 p-1"
+              *ngFor="let item of movieDetails.genres"
+            >
+              {{ item.name }}
+            </div>
+          </div>
+          <div class="my-5">
+            <h5 class="my-3 text-light">
+              <span class="text-muted">Vote :</span>
+              {{ movieDetails.vote_average }}
+            </h5>
+            <h5 class="my-3">
+              <span class="text-muted">Budget :</span>
+
+              {{ movieDetails.budget }} $
+            </h5>
+
+            <h5 class="mt-5 text-muted">Production Companies :</h5>
+            <ul class="list-unstyled ps-4">
+              <li *ngFor="let comp of movieDetails.production_companies">
+                {{ comp.name }}
+              </li>
+            </ul>
+
+            <p class="mt-5 text-muted h5">
+              {{ movieDetails.overview }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
